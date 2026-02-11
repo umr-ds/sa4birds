@@ -2,9 +2,6 @@ DT = {
     "HSN": ["checkpoints/DT/HSN/HSN_eca_nfnet_l1_2025-10-20_112131",
             "checkpoints/DT/HSN/HSN_eca_nfnet_l1_2025-10-20_113316",
             "checkpoints/DT/HSN/HSN_eca_nfnet_l1_2025-10-20_114501"],
-    #"HSN": [ "/mnt/marc3_scratch_fb12/bellafkir/sed2d-bird/checkpoints/HSN_eca_nfnet_l1_2025-10-20_112131",
-    #        "/mnt/marc3_scratch_fb12/bellafkir/sed2d-bird/checkpoints/HSN_eca_nfnet_l1_2025-10-20_113316",
-    #        "/mnt/marc3_scratch_fb12/bellafkir/sed2d-bird/checkpoints/HSN_eca_nfnet_l1_2025-10-20_114501"],
 
     "POW": ["checkpoints/DT/POW/POW_eca_nfnet_l1_2025-10-11_143357",
             "checkpoints/DT/POW/POW_eca_nfnet_l1_2025-10-11_145846",
