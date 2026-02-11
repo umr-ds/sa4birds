@@ -13,16 +13,16 @@ dt_checkpoints = [
                 "https://next.hessenbox.de/index.php/s/qKmMDPyQSzRRzoo/download",
                 "https://next.hessenbox.de/index.php/s/GPk5MdGsLikmHKa/download",
 ]
-# mt_checkpoints = ["https://next.hessenbox.de/index.php/s/ck8J8A95DdssSo4/download"]
+
+mt_checkpoints = ["https://next.hessenbox.de/index.php/s/ck8J8A95DdssSo4/download"]
 
 lt_checkpoints = ["https://next.hessenbox.de/index.php/s/xxE5XTaNcHCXidy/download"]
 
-# for i, url in enumerate(dt_checkpoints + lt_checkpoints + mt_checkpoints):
-for i, url in enumerate(dt_checkpoints):
+for i, url in enumerate(dt_checkpoints + lt_checkpoints + mt_checkpoints):
     zip_filename = "file.zip"
     extract_dir = "checkpoints/DT"
-    #if i > 7:
-    #extract_dir = "checkpoints/"
+    if i > 7:
+        extract_dir = "checkpoints/"
 
     # Download
     with requests.get(url, stream=True) as r:
