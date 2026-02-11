@@ -49,19 +49,12 @@ class TopKAccuracy(Metric):
 
 
 def calculate_auc(targets, outputs):
-    # auroc_fn = AUROC(
-    #     task="multilabel",
-    #     num_labels=targets.shape[-1],
-    #     average="macro",
-    #     thresholds=None,
-    # )
+
     np_targets = targets.cpu().numpy()
     np_outputs = outputs.cpu().numpy()
     num_classes = np_targets.shape[1]
     aucs = []
     aucs2 = []
-
-    # probs = 1 / (1 + np.exp(-np_outputs))
 
     for i in range(num_classes):
         np_targets[:, i] = np.where(np_targets[:, i] > 0.5, 1, 0)
@@ -82,7 +75,6 @@ def calculate_map(targets, outputs):
     num_classes = targets.shape[1]
     aps = []
     aps2 = []
-    # probs = 1 / (1 + np.exp(-np_outputs))
     for i in range(num_classes):
         np_targets[:, i] = np.where(np_targets[:, i] > 0.5, 1, 0)
 
@@ -93,8 +85,6 @@ def calculate_map(targets, outputs):
         else:
             aps2.append(-1)
 
-    #cmap = cmAP(targets.shape[-1])
-    #print(cmap)
     return np.mean(aps), aps2
 
 
