@@ -44,13 +44,13 @@ python prepare_checkpoints.py
 You can then run the evaluation using `evaluate.py`. For example, to evaluate on **HSN** using the **DT** regime run:
 
 ```bash
-python evaluate.py mode=DT downtask=HSN
+python validate.py mode=DT downtask=HSN
 ```
 
 To evaluate on all Birdset downtasks: 
 
 ```bash
-python evaluate.py mode=DT downtask=ALL
+python validate.py mode=DT downtask=ALL
 ```
 
 ## Inference 
