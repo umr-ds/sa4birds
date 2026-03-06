@@ -1,3 +1,33 @@
+# ============================================================
+# Checkpoint Registry
+# ============================================================
+# These dictionaries define the checkpoint paths used for
+# evaluation. Each key corresponds to a downstream task (DT),
+# (MT), or (LT) training setup.
+#
+# Structure:
+#   {
+#       "<TASK_NAME>": [
+#           "<checkpoint_path_1>",
+#           "<checkpoint_path_2>",
+#           "<checkpoint_path_3>",
+#       ]
+#   }
+#
+# Notes:
+# - Each task contains 3 independently trained runs.
+# - Checkpoints follow the naming convention:
+#     <TASK>_eca_nfnet_l1_<YYYY-MM-DD>_<HHMMSS>
+# - These are typically averaged during evaluation.
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Downstream Task (DT) checkpoints
+# ------------------------------------------------------------
+# Each key corresponds to a specific downstream dataset.
+# Used when evaluating task-specific fine-tuned models.
+
 DT = {
     "HSN": ["checkpoints/DT/HSN/HSN_eca_nfnet_l1_2025-10-20_112131",
             "checkpoints/DT/HSN/HSN_eca_nfnet_l1_2025-10-20_113316",
