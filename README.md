@@ -53,7 +53,6 @@ This project requires **Python 3+** and is designed to run on a **CUDA-capable G
 ### System Requirements
 - **Python:** > 3.0 (recommended: Python 3.9+)
 - **GPU (recommended):** NVIDIA GPU with CUDA support
-- **CUDA Toolkit:** Compatible with your installed ML framework (e.g., PyTorch)
 - **NVIDIA Drivers:** Required for CUDA support
 
 ### Python Dependencies
@@ -139,8 +138,8 @@ Pretrained checkpoints are available for three training regimes:
 | Regime | Description                               |
 |--------|-------------------------------------------|
 | **DT** | Dedicated training (task-specific models) |
-| **MT** | Medium multi-task training                |
-| **LT** | Large multi-task training                 |
+| **MT** | Medium training                           |
+| **LT** | Large  training                           |
 
 Download the model checkpoints and place them in the `checkpoints` directory, organized by training regime (`DT`, `MT`, or `LT`).
 
@@ -225,16 +224,16 @@ and run the cells to see the model in action.
 
 ## Validation
 
-After installing the dependencies listed in `requirements.txt`, you can evaluate a model on a specific downstream task by first downloading the model checkpoints and placing them in the `checkpoints` director. Use the following to download all checkpoints: 
+After installing the dependencies listed in `requirements.txt` and downloading the checkpoints (see [Checkpoints](#checkpoints)), you can run the evaluation using `evaluate.py`.
 
-```bash
-python prepare_checkpoints.py
-```
-
-You can then run the evaluation using `evaluate.py`. For example, to evaluate on **HSN** using the **DT** regime run:
-
+For example, to evaluate **HSN** using the **DT** regime, run:
 ```bash
 python validate.py mode=DT downtask=HSN
+```
+To run on CPU use:
+
+```bash
+python validate.py --cpu mode=DT downtask=HSN 
 ```
 
 To evaluate on all Birdset downtasks: 
@@ -243,7 +242,7 @@ To evaluate on all Birdset downtasks:
 python validate.py mode=DT downtask=ALL
 ```
 
-A demonstration of how to evaluate a trained model is provided in the notebook:
+A demonstration of how to evaluate the trained models is provided in the notebook:
 
 ```
 evaluation_demo.ipynb
