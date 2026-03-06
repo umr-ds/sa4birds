@@ -215,7 +215,7 @@ jupyter lab
 Your browser will open automatically. Then open:
 
 ```
-inference_example.ipynb
+notebooks/inference_example.ipynb
 ```
 
 and run the cells to see the model in action.
@@ -245,5 +245,5 @@ python validate.py mode=DT downtask=ALL
 A demonstration of how to evaluate the trained models is provided in the notebook:
 
 ```
-evaluation_demo.ipynb
+notebooks/evaluation_demo.ipynb
 ```
