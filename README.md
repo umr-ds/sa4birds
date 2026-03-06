@@ -30,16 +30,17 @@ This repository contains the official implementation of **Spectrogram Attention 
 ```
 sa4birds/
 │
-├── checkpoints/              # pretrained model checkpoints
-├── figures/                  # architecture figures
+├── checkpoints/                    # pretrained model checkpoints
+├── figures/                        # architecture figures
 │
-├── models/                   # model implementations
+├── models/                         # model implementations
 │
-├── validate.py               # evaluation entry point
-├── prepare_checkpoints.py    # download checkpoints
+├── validate.py                     # evaluation entry point
+├── prepare_checkpoints.py          # download checkpoints
 │
-├── model_demo.ipynb          # model usage example
-├── evaluation_demo.ipynb     # evaluation example
+├── notebooks/
+    └──model_demo.ipynb             # model usage example
+    └── evaluation_demo.ipynb       # evaluation example
 │
 ├── requirements.txt
 └── README.md
