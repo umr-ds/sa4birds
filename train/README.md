@@ -136,7 +136,7 @@ datasets.load_dataset("DBD-research-group/BirdSet", down_task)
 After installing dependencies and preparing the datasets, training can be started from the project root with:
 
 ```bash
-python3 train/train_birdset.py --config-name=base_finetune \
+PYTHONPATH=$PWD:$PYTHONPATH python3 train/train_birdset.py --config-name=base_finetune \
               train.dataset_name=HSN \
               train.n_epochs=5 \
               train.lr=6e-5 \
