@@ -68,7 +68,7 @@ for i, url in enumerate(dt_checkpoints + lt_checkpoints + mt_checkpoints):
     """
 
     zip_filename = "file.zip"
-    extract_dir = "checkpoints/DT"
+    extract_dir = "ckpts/DT"
 
     # Non-DT checkpoints are extracted to a different directory
     if i > 7:
