@@ -1,0 +1,11 @@
+train:
+  _target_: utils.event_decoder.EventDecoderTrain
+  min_len: 1
+  max_len: 7
+  extracted_interval: 7
+  extension_time: 10
+  sample_rate: ${frontend.sample_rate}
+val:
+  _target_: utils.event_decoder.EventDecoder
+  extracted_interval: 5
+  sample_rate: ${frontend.sample_rate}

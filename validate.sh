@@ -1,0 +1,1 @@
+python3 validate --mode DT --donwtask HSN

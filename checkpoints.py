@@ -1,0 +1,73 @@
+# ============================================================
+# Checkpoint Registry
+# ============================================================
+# These dictionaries define the checkpoint paths used for
+# evaluation. Each key corresponds to a downstream task (DT),
+# (MT), or (LT) training setup.
+#
+# Structure:
+#   {
+#       "<TASK_NAME>": [
+#           "<checkpoint_path_1>",
+#           "<checkpoint_path_2>",
+#           "<checkpoint_path_3>",
+#       ]
+#   }
+#
+# Notes:
+# - Each task contains 3 independently trained runs.
+# - Checkpoints follow the naming convention:
+#     <TASK>_eca_nfnet_l1_<YYYY-MM-DD>_<HHMMSS>
+# - These are typically averaged during evaluation.
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Downstream Task (DT) checkpoints
+# ------------------------------------------------------------
+# Each key corresponds to a specific downstream dataset.
+# Used when evaluating task-specific fine-tuned models.
+
+DT = {
+    "HSN": ["checkpoints/DT/HSN/HSN_eca_nfnet_l1_2025-10-20_112131",
+            "checkpoints/DT/HSN/HSN_eca_nfnet_l1_2025-10-20_113316",
+            "checkpoints/DT/HSN/HSN_eca_nfnet_l1_2025-10-20_114501"],
+
+    "POW": ["checkpoints/DT/POW/POW_eca_nfnet_l1_2025-10-11_143357",
+            "checkpoints/DT/POW/POW_eca_nfnet_l1_2025-10-11_145846",
+            "checkpoints/DT/POW/POW_eca_nfnet_l1_2025-10-11_152335"],
+
+    "SNE": ["checkpoints/DT/SNE/SNE_eca_nfnet_l1_2025-10-12_131606",
+            "checkpoints/DT/SNE/SNE_eca_nfnet_l1_2025-10-12_135017",
+            "checkpoints/DT/SNE/SNE_eca_nfnet_l1_2025-10-12_142429"],
+
+    "PER": ["checkpoints/DT/PER/PER_eca_nfnet_l1_2025-10-12_194055",
+            "checkpoints/DT/PER/PER_eca_nfnet_l1_2025-10-12_201638",
+            "checkpoints/DT/PER/PER_eca_nfnet_l1_2025-10-12_204942"],
+
+    "NES": ["checkpoints/DT/NES/NES_eca_nfnet_l1_2025-10-13_083702",
+            "checkpoints/DT/NES/NES_eca_nfnet_l1_2025-10-13_091658",
+            "checkpoints/DT/NES/NES_eca_nfnet_l1_2025-10-13_095515"],
+
+    "UHH": ["checkpoints/DT/UHH/UHH_eca_nfnet_l1_2025-10-13_130012",
+            "checkpoints/DT/UHH/UHH_eca_nfnet_l1_2025-10-13_132434",
+            "checkpoints/DT/UHH/UHH_eca_nfnet_l1_2025-10-13_134708"],
+
+    "NBP": ["checkpoints/DT/NBP/NBP_eca_nfnet_l1_2025-10-13_143637",
+            "checkpoints/DT/NBP/NBP_eca_nfnet_l1_2025-10-13_151856",
+            "checkpoints/DT/NBP/NBP_eca_nfnet_l1_2025-10-13_160131"],
+
+    "SSW": ["checkpoints/DT/SSW/SSW_eca_nfnet_l1_2025-10-11_215626",
+            "checkpoints/DT/SSW/SSW_eca_nfnet_l1_2025-10-11_203307",
+            "checkpoints/DT/SSW/SSW_eca_nfnet_l1_2025-10-11_190939"],
+}
+
+MT = {"ALL": ["checkpoints/MT/MT_eca_nfnet_l1_2025-11-25_151907",
+              "checkpoints/MT/MT_eca_nfnet_l1_2025-11-25_214315",
+              "checkpoints/MT/MT_eca_nfnet_l1_2025-11-26_010815"]
+      }
+
+LT = {"ALL": ["checkpoints/LT/LT_eca_nfnet_l1_2025-11-25_043730",
+              "checkpoints/LT/LT_eca_nfnet_l1_2025-11-25_060339",
+              "checkpoints/LT/LT_eca_nfnet_l1_2025-11-24_180849"]
+      }

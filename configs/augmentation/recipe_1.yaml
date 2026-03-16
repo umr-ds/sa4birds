@@ -1,0 +1,57 @@
+wave_aug:
+  multilabel_mix:
+    _target_: utils.augmentation.MultilabelMix
+    p: 0.7
+    min_snr_in_db: 3.0
+    max_snr_in_db: 30.0
+    mix_target: "union"
+  bg_noise:
+    _target_: utils.augmentation.AddBackgroundNoise
+    background_paths:
+      - "${hydra:runtime.cwd}/additional_data/BirdVox-DCASE-20k/wav"
+      - "${hydra:runtime.cwd}/additional_data/ESC-50/ESC-50-master/audio"
+    p: 0.5
+    sample_rate: ${frontend.sample_rate}
+    max_snr_in_db: 30
+    min_snr_in_db: 3
+  colorednoise:
+    _target_: utils.augmentation.AddColoredNoise
+    p: 0.2
+    max_f_decay: 2
+    min_f_decay: -2
+    max_snr_in_db: 30
+    min_snr_in_db: 3
+  gain:
+    _target_: utils.augmentation.Gain
+    p: 0.2
+    min_gain_in_db: -18
+    max_gain_in_db: 6
+  cyclic_rolling_start: False
+  no_call:
+    p: 0
+    dirs:
+    num_per_batch: 5
+spec_aug:
+  masking:
+    p: 0.3
+    timem: 100
+    freqm: 50
+  mix:
+    p: 0.0
+    alpha: 0.3
+    beta: 0.3
+    late: False
+  filteraug:
+    _target_: utils.augmentation.FilterAugment
+    p: 0.0
+    db_range:
+      - -6
+      - 6
+    n_band:
+      - 3
+      - 6
+    min_bw: 6
+    filter_type: "linear"
+
+
+

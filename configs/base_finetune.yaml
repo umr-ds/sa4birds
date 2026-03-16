@@ -1,0 +1,61 @@
+defaults:
+  - {augmentation: recipe_1}
+  - {event_decoder: train_7s.yaml}
+
+
+# spec params
+frontend:
+  sample_rate : 32_000
+  n_fft : 2048
+  n_stft : 1025
+  hop_length : 320
+  power : 2.0
+  n_mels : 128
+  resize :
+  in_chans: 1
+  mean: -4.268
+  std: 4.569
+  train_target_length : 501 # px
+  val_target_length : 501 # px
+
+# model params
+network:
+  classifier: "DSA"
+  num_att_heads: 1
+  model_name: 'eca_nfnet_l1'
+  pretrain_checkpoint:
+  dropout_rate: 0.0
+  droppath_rate:
+  att_loss: True
+  temperature: 2
+
+
+# train params
+train:
+  dataset_name : "HSN"
+  extra_xc:
+  extra_inat:
+  exp_dir : ./checkpoints/${train.dataset_name}_${network.model_name}_${now:%Y-%m-%d_%H%M%S}
+  n_epochs : 50
+  batch_size : 64 # 64
+  num_workers : 24
+  n_print_steps : 10
+  lr : 5e-4
+  lr_head_factor: 1
+  optimizer: 'AdamW'
+  weight_decay: 1e-4
+  device : 'cuda'
+  criterion: "AsymmetricLossMultiLabel"
+  scheduler: "cosine_transformer"
+  num_warmup_epochs : 1
+  lr_patience: 2
+  label_map:
+  num_classes:
+  secondary_label_weight: 0
+  class_limit: 600
+  event_limit: 5
+
+# general params
+seed : 1
+columns : ["filepath", "start_time", "end_time", "detected_events", "ebird_code", "ebird_code_multilabel", "ebird_code_secondary"]
+save_checkpoints: False
