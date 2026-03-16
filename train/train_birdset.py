@@ -972,7 +972,7 @@ def main(cfg: DictConfig):
     if not os.path.exists(cfg.network.pretrain_checkpoint):
         logger.info("Downloading pretrained checkpoint")
         download_ckpt('https://next.hessenbox.de/index.php/s/F5RWCp9ppegTigo/download',
-                      extract_dir='checkpoints/')
+                      extract_dir='ckpts/')
 
     state_dict = torch.load(cfg.network.pretrain_checkpoint)['state_dict']
     audio_model.load_state_dict(state_dict, strict=False)

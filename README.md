@@ -31,7 +31,7 @@ This repository contains the official implementation of **Spectrogram Attention 
 sa4birds/
 │
 ├── additional_data/          # Auxiliary data used by the project
-├── checkpoints/              # Pretrained model checkpoints
+├── ckpts/              # Pretrained model checkpoints
 ├── figures/                  # Architecture and documentation figures
 │
 ├── models/                   # Model architectures and implementations
@@ -177,7 +177,7 @@ Our pretrained checkpoints for BirdSet are available for three training regimes:
 | **MT** | Medium training                           |
 | **LT** | Large  training                           |
 
-Download the model checkpoints and place them in the `checkpoints` directory, organized by training regime (`DT`, `MT`, or `LT`).
+Download the model checkpoints and place them in the `ckpts` directory, organized by training regime (`DT`, `MT`, or `LT`).
 
 
 | Training Regime |   Task    |                                Url                                |
@@ -205,7 +205,7 @@ This will download the main checkpoints trained on BirdSet with the following st
 ```
 sa4birds/
 │
-├── checkpoints/                         # pretrained model checkpoints
+├── ckpts/                         # pretrained model checkpoints
 │   ├── DT/
 │   │   └── HSN/                         # downstream task name
 │   │       ├── HSN_eca_nfnet_l1_2025-10-20_112131/   # DT HSN first model checkpoint
@@ -234,7 +234,7 @@ This notebook shows how to:
 - run model 
 - inspect the outputs
 
-To run the demo notebook, install Jupyter:
+To run the demo notebook, install [Jupyter](https://jupyter.org/):
 
 ```bash
 pip install jupyterlab

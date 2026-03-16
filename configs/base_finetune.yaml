@@ -35,7 +35,7 @@ train:
   dataset_name : "HSN"
   extra_xc:
   extra_inat:
-  exp_dir : ./checkpoints/${train.dataset_name}_${network.model_name}_${now:%Y-%m-%d_%H%M%S}
+  exp_dir : ./ckpts/${train.dataset_name}_${network.model_name}_${now:%Y-%m-%d_%H%M%S}
   n_epochs : 50
   batch_size : 64 # 64
   num_workers : 24
