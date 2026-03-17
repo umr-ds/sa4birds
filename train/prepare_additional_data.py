@@ -70,7 +70,7 @@ for i, (url, dataset) in enumerate(urls):
 # 2. Crawl iNaturalist Audio Data
 # ==================================================
 target_dir = '../additional_data/iNat'
-os.makedirs(target, exist_ok=True)
+os.makedirs(target_dir, exist_ok=True)
 obs_ids = open('../additional_data/inaturalist_observation_ids.txt').read().splitlines()
 for obs_id in tqdm(obs_ids, desc="Crawl iNaturalist"):
     url = f"https://api.inaturalist.org/v1/observations/{obs_id}"
