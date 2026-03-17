@@ -152,7 +152,7 @@ PYTHONPATH=$PWD:$PYTHONPATH python3 train/train_birdset.py --config-name=base_fi
               augmentation.spec_aug.masking.freqm=50 \
               augmentation.wave_aug.no_call.p=1.0 \
               augmentation.wave_aug.no_call.num_per_batch=24 \
-              augmentation.wave_aug.no_call.dirs="[$(pwd)/additional_data/BirdVox-DCASE-20k/wav,$(pwd)/additional_data/ESC-50/ESC-50-master/audio,$(pwd)/additional_data/freefield1010/wav,$(pwd)/additional_data/iNat_insects]"\
+              augmentation.wave_aug.no_call.dirs="[$(pwd)/additional_data/BirdVox-DCASE-20k/wav,$(pwd)/additional_data/ESC-50/ESC-50-master/audio,$(pwd)/additional_data/freefield1010/wav,$(pwd)/additional_data/iNat]"\
               frontend.train_target_length=701 \
               frontend.val_target_length=701 \
               frontend.std=8.8109 \
