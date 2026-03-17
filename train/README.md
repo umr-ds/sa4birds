@@ -145,7 +145,7 @@ PYTHONPATH=$PWD:$PYTHONPATH python3 train/train_birdset.py --config-name=base_fi
               network.classifier=DSA \
               network.num_att_heads=1 \
               network.dropout_rate=0.4 \
-              network.pretrain_checkpoint=checkpoints/XCL_PRETRAIN/XCL_eca_nfnet_l1_2025-09-02_195817/models/model.pth \
+              network.pretrain_checkpoint=ckpts/XCL_PRETRAIN/XCL_eca_nfnet_l1_2025-09-02_195817/models/model.pth \
               augmentation.spec_aug.mix.p=0.5 \
               augmentation.spec_aug.masking.p=0.5 \
               augmentation.spec_aug.masking.timem=100 \
